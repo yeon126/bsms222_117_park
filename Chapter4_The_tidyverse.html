@@ -221,9 +221,9 @@ pre code {
 <li>co2 is not tidy: it is a matrix instead of a data frame.</li>
 <li>co2 is not tidy: to be tidy we would have to wrangle it to have three columns (year, month and value), then each co2 observation would have a row.</li>
 </ol>
-<pre class="r"><code>head(co2)</code></pre>
-<pre><code>## [1] 315.42 316.31 316.50 317.56 318.13 318.00</code></pre>
-<p>Answer: d</p>
+<pre class="r"><code>library(pander)
+pander(head(co2))</code></pre>
+<p><em>315.4</em>, <em>316.3</em>, <em>316.5</em>, <em>317.6</em>, <em>318.1</em> and <em>318</em> Answer: d</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Examine the built-in dataset ChickWeight. Which of the following is true:</li>
 </ol>
@@ -233,12 +233,61 @@ pre code {
 <li>ChickWeight is not tidy: we are missing the year column.</li>
 <li>ChickWeight is tidy: it is stored in a data frame.</li>
 </ol>
-<pre class="r"><code>head(ChickWeight)</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["weight"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Time"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Chick"],"name":[3],"type":["ord"],"align":["right"]},{"label":["Diet"],"name":[4],"type":["fct"],"align":["left"]}],"data":[{"1":"42","2":"0","3":"1","4":"1","_rn_":"1"},{"1":"51","2":"2","3":"1","4":"1","_rn_":"2"},{"1":"59","2":"4","3":"1","4":"1","_rn_":"3"},{"1":"64","2":"6","3":"1","4":"1","_rn_":"4"},{"1":"76","2":"8","3":"1","4":"1","_rn_":"5"},{"1":"93","2":"10","3":"1","4":"1","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<pre class="r"><code>pander(head(ChickWeight))</code></pre>
+<table style="width:44%;">
+<colgroup>
+<col width="12%" />
+<col width="9%" />
+<col width="11%" />
+<col width="11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">weight</th>
+<th align="center">Time</th>
+<th align="center">Chick</th>
+<th align="center">Diet</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">42</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">51</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">59</td>
+<td align="center">4</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">64</td>
+<td align="center">6</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">76</td>
+<td align="center">8</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">93</td>
+<td align="center">10</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
 <p>Answer: b</p>
 <ol start="3" style="list-style-type: decimal">
 <li>Examine the built-in dataset BOD. Which of the following is true:</li>
@@ -249,12 +298,45 @@ pre code {
 <li>BOD is tidy: each row is an observation with two values (time and demand)</li>
 <li>BOD is tidy: all small datasets are tidy by definition.</li>
 </ol>
-<pre class="r"><code>head(BOD)</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Time"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["demand"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"8.3","_rn_":"1"},{"1":"2","2":"10.3","_rn_":"2"},{"1":"3","2":"19.0","_rn_":"3"},{"1":"4","2":"16.0","_rn_":"4"},{"1":"5","2":"15.6","_rn_":"5"},{"1":"7","2":"19.8","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<pre class="r"><code>pander(head(BOD))</code></pre>
+<table style="width:22%;">
+<colgroup>
+<col width="9%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Time</th>
+<th align="center">demand</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">8.3</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">10.3</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">19</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">16</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">15.6</td>
+</tr>
+<tr class="even">
+<td align="center">7</td>
+<td align="center">19.8</td>
+</tr>
+</tbody>
+</table>
 <p>Answer: c</p>
 <ol start="4" style="list-style-type: decimal">
 <li>Which of the following built-in datasets is tidy (you can pick more than one):</li>
@@ -267,76 +349,278 @@ pre code {
 <li>Orange</li>
 <li>UCBAdmissions</li>
 </ol>
-<pre class="r"><code>head(BJsales)</code></pre>
-<pre><code>## [1] 200.1 199.5 199.4 198.9 199.0 200.2</code></pre>
-<pre class="r"><code>head(EuStockMarkets)</code></pre>
-<pre><code>##          DAX    SMI    CAC   FTSE
-## [1,] 1628.75 1678.1 1772.8 2443.6
-## [2,] 1613.63 1688.5 1750.5 2460.2
-## [3,] 1606.51 1678.6 1718.0 2448.2
-## [4,] 1621.04 1684.1 1708.1 2470.4
-## [5,] 1618.16 1686.6 1723.1 2484.7
-## [6,] 1610.61 1671.6 1714.3 2466.8</code></pre>
-<pre class="r"><code>head(DNase)</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Run"],"name":[1],"type":["ord"],"align":["right"]},{"label":["conc"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["density"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"0.04882812","3":"0.017","_rn_":"1"},{"1":"1","2":"0.04882812","3":"0.018","_rn_":"2"},{"1":"1","2":"0.19531250","3":"0.121","_rn_":"3"},{"1":"1","2":"0.19531250","3":"0.124","_rn_":"4"},{"1":"1","2":"0.39062500","3":"0.206","_rn_":"5"},{"1":"1","2":"0.39062500","3":"0.215","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-<pre class="r"><code>head(Formaldehyde)</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["carb"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["optden"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"0.1","2":"0.086","_rn_":"1"},{"1":"0.3","2":"0.269","_rn_":"2"},{"1":"0.5","2":"0.446","_rn_":"3"},{"1":"0.6","2":"0.538","_rn_":"4"},{"1":"0.7","2":"0.626","_rn_":"5"},{"1":"0.9","2":"0.782","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-<pre class="r"><code>head(Orange)</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Tree"],"name":[1],"type":["ord"],"align":["right"]},{"label":["age"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["circumference"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"118","3":"30","_rn_":"1"},{"1":"1","2":"484","3":"58","_rn_":"2"},{"1":"1","2":"664","3":"87","_rn_":"3"},{"1":"1","2":"1004","3":"115","_rn_":"4"},{"1":"1","2":"1231","3":"120","_rn_":"5"},{"1":"1","2":"1372","3":"142","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-<pre class="r"><code>head(UCBAdmissions)</code></pre>
-<pre><code>## , , Dept = A
-## 
-##           Gender
-## Admit      Male Female
-##   Admitted  512     89
-##   Rejected  313     19
-## 
-## , , Dept = B
-## 
-##           Gender
-## Admit      Male Female
-##   Admitted  353     17
-##   Rejected  207      8
-## 
-## , , Dept = C
-## 
-##           Gender
-## Admit      Male Female
-##   Admitted  120    202
-##   Rejected  205    391
-## 
-## , , Dept = D
-## 
-##           Gender
-## Admit      Male Female
-##   Admitted  138    131
-##   Rejected  279    244
-## 
-## , , Dept = E
-## 
-##           Gender
-## Admit      Male Female
-##   Admitted   53     94
-##   Rejected  138    299
-## 
-## , , Dept = F
-## 
-##           Gender
-## Admit      Male Female
-##   Admitted   22     24
-##   Rejected  351    317</code></pre>
+<pre class="r"><code>pander(head(BJsales))</code></pre>
+<p><em>200.1</em>, <em>199.5</em>, <em>199.4</em>, <em>198.9</em>, <em>199</em> and <em>200.2</em></p>
+<pre class="r"><code>pander(head(EuStockMarkets))</code></pre>
+<table style="width:39%;">
+<colgroup>
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">DAX</th>
+<th align="center">SMI</th>
+<th align="center">CAC</th>
+<th align="center">FTSE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1629</td>
+<td align="center">1678</td>
+<td align="center">1773</td>
+<td align="center">2444</td>
+</tr>
+<tr class="even">
+<td align="center">1614</td>
+<td align="center">1688</td>
+<td align="center">1750</td>
+<td align="center">2460</td>
+</tr>
+<tr class="odd">
+<td align="center">1607</td>
+<td align="center">1679</td>
+<td align="center">1718</td>
+<td align="center">2448</td>
+</tr>
+<tr class="even">
+<td align="center">1621</td>
+<td align="center">1684</td>
+<td align="center">1708</td>
+<td align="center">2470</td>
+</tr>
+<tr class="odd">
+<td align="center">1618</td>
+<td align="center">1687</td>
+<td align="center">1723</td>
+<td align="center">2485</td>
+</tr>
+<tr class="even">
+<td align="center">1611</td>
+<td align="center">1672</td>
+<td align="center">1714</td>
+<td align="center">2467</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>pander(head(DNase))</code></pre>
+<table style="width:36%;">
+<colgroup>
+<col width="8%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Run</th>
+<th align="center">conc</th>
+<th align="center">density</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">0.04883</td>
+<td align="center">0.017</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center">0.04883</td>
+<td align="center">0.018</td>
+</tr>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">0.1953</td>
+<td align="center">0.121</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center">0.1953</td>
+<td align="center">0.124</td>
+</tr>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">0.3906</td>
+<td align="center">0.206</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center">0.3906</td>
+<td align="center">0.215</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>pander(head(Formaldehyde))</code></pre>
+<table style="width:22%;">
+<colgroup>
+<col width="9%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">carb</th>
+<th align="center">optden</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">0.1</td>
+<td align="center">0.086</td>
+</tr>
+<tr class="even">
+<td align="center">0.3</td>
+<td align="center">0.269</td>
+</tr>
+<tr class="odd">
+<td align="center">0.5</td>
+<td align="center">0.446</td>
+</tr>
+<tr class="even">
+<td align="center">0.6</td>
+<td align="center">0.538</td>
+</tr>
+<tr class="odd">
+<td align="center">0.7</td>
+<td align="center">0.626</td>
+</tr>
+<tr class="even">
+<td align="center">0.9</td>
+<td align="center">0.782</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>pander(head(Orange))</code></pre>
+<table style="width:42%;">
+<colgroup>
+<col width="9%" />
+<col width="9%" />
+<col width="22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Tree</th>
+<th align="center">age</th>
+<th align="center">circumference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">118</td>
+<td align="center">30</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center">484</td>
+<td align="center">58</td>
+</tr>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">664</td>
+<td align="center">87</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center">1004</td>
+<td align="center">115</td>
+</tr>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">1231</td>
+<td align="center">120</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center">1372</td>
+<td align="center">142</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>pander(head(UCBAdmissions))</code></pre>
+<table style="width:88%;">
+<colgroup>
+<col width="15%" />
+<col width="12%" />
+<col width="9%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td align="center">Dept</td>
+<td align="center">A</td>
+<td align="center">B</td>
+<td align="center">C</td>
+<td align="center">D</td>
+<td align="center">E</td>
+<td align="center">F</td>
+</tr>
+<tr class="even">
+<td>Admit</td>
+<td>Gender</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td>Admitted</td>
+<td>Male</td>
+<td align="center"></td>
+<td align="center">512</td>
+<td align="center">353</td>
+<td align="center">120</td>
+<td align="center">138</td>
+<td align="center">53</td>
+<td align="center">22</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Female</td>
+<td align="center"></td>
+<td align="center">89</td>
+<td align="center">17</td>
+<td align="center">202</td>
+<td align="center">131</td>
+<td align="center">94</td>
+<td align="center">24</td>
+</tr>
+<tr class="odd">
+<td>Rejected</td>
+<td>Male</td>
+<td align="center"></td>
+<td align="center">313</td>
+<td align="center">207</td>
+<td align="center">205</td>
+<td align="center">279</td>
+<td align="center">138</td>
+<td align="center">351</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Female</td>
+<td align="center"></td>
+<td align="center">19</td>
+<td align="center">8</td>
+<td align="center">391</td>
+<td align="center">244</td>
+<td align="center">299</td>
+<td align="center">317</td>
+</tr>
+</tbody>
+</table>
 <p>Answer: b, c, d, e</p>
 </div>
 <div id="manipulating-data-frames" class="section level2">
@@ -351,34 +635,196 @@ murders &lt;- mutate(murders, rate = total / population * 100000)</code></pre>
 <p>Notice that here we used total and population inside the function, which are objects that are not defined in our workspace. But why don’t we get an error?</p>
 <p>This is one of dplyr’s main features. Functions in this package, such as mutate, know to look for variables in the data frame provided in the first argument. In the call to mutate above, total will have the values in murders$total. This approach makes the code much more readable.</p>
 <p>We can see that the new column is added:</p>
-<pre class="r"><code>head(murders)</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["state"],"name":[1],"type":["chr"],"align":["left"]},{"label":["abb"],"name":[2],"type":["chr"],"align":["left"]},{"label":["region"],"name":[3],"type":["fct"],"align":["left"]},{"label":["population"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["total"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["rate"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"Alabama","2":"AL","3":"South","4":"4779736","5":"135","6":"2.824424","_rn_":"1"},{"1":"Alaska","2":"AK","3":"West","4":"710231","5":"19","6":"2.675186","_rn_":"2"},{"1":"Arizona","2":"AZ","3":"West","4":"6392017","5":"232","6":"3.629527","_rn_":"3"},{"1":"Arkansas","2":"AR","3":"South","4":"2915918","5":"93","6":"3.189390","_rn_":"4"},{"1":"California","2":"CA","3":"West","4":"37253956","5":"1257","6":"3.374138","_rn_":"5"},{"1":"Colorado","2":"CO","3":"West","4":"5029196","5":"65","6":"1.292453","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<pre class="r"><code>pander(head(murders))</code></pre>
+<table style="width:79%;">
+<colgroup>
+<col width="18%" />
+<col width="8%" />
+<col width="12%" />
+<col width="18%" />
+<col width="11%" />
+<col width="11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">state</th>
+<th align="center">abb</th>
+<th align="center">region</th>
+<th align="center">population</th>
+<th align="center">total</th>
+<th align="center">rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Alabama</td>
+<td align="center">AL</td>
+<td align="center">South</td>
+<td align="center">4779736</td>
+<td align="center">135</td>
+<td align="center">2.824</td>
+</tr>
+<tr class="even">
+<td align="center">Alaska</td>
+<td align="center">AK</td>
+<td align="center">West</td>
+<td align="center">710231</td>
+<td align="center">19</td>
+<td align="center">2.675</td>
+</tr>
+<tr class="odd">
+<td align="center">Arizona</td>
+<td align="center">AZ</td>
+<td align="center">West</td>
+<td align="center">6392017</td>
+<td align="center">232</td>
+<td align="center">3.63</td>
+</tr>
+<tr class="even">
+<td align="center">Arkansas</td>
+<td align="center">AR</td>
+<td align="center">South</td>
+<td align="center">2915918</td>
+<td align="center">93</td>
+<td align="center">3.189</td>
+</tr>
+<tr class="odd">
+<td align="center">California</td>
+<td align="center">CA</td>
+<td align="center">West</td>
+<td align="center">37253956</td>
+<td align="center">1257</td>
+<td align="center">3.374</td>
+</tr>
+<tr class="even">
+<td align="center">Colorado</td>
+<td align="center">CO</td>
+<td align="center">West</td>
+<td align="center">5029196</td>
+<td align="center">65</td>
+<td align="center">1.292</td>
+</tr>
+</tbody>
+</table>
 <p>Although we have overwritten the original murders object, this does not change the object that loaded with data(murders). If we load the murders data again, the original will overwrite our mutated version.</p>
 </div>
 <div id="subsetting-with-filter" class="section level3">
 <h3>4.3.2 Subsetting with filter</h3>
 <p>Now suppose that we want to filter the data table to only show the entries for which the murder rate is lower than 0.71. To do this we use the filter function, which takes the data table as the first argument and then the conditional statement as the second. Like mutate, we can use the unquoted variable names from murders inside the function and it will know we mean the columns and not objects in the workspace.</p>
-<pre class="r"><code>filter(murders, rate &lt;= 0.71)</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["state"],"name":[1],"type":["chr"],"align":["left"]},{"label":["abb"],"name":[2],"type":["chr"],"align":["left"]},{"label":["region"],"name":[3],"type":["fct"],"align":["left"]},{"label":["population"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["total"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["rate"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"Hawaii","2":"HI","3":"West","4":"1360301","5":"7","6":"0.5145920"},{"1":"Iowa","2":"IA","3":"North Central","4":"3046355","5":"21","6":"0.6893484"},{"1":"New Hampshire","2":"NH","3":"Northeast","4":"1316470","5":"5","6":"0.3798036"},{"1":"North Dakota","2":"ND","3":"North Central","4":"672591","5":"4","6":"0.5947151"},{"1":"Vermont","2":"VT","3":"Northeast","4":"625741","5":"2","6":"0.3196211"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<pre class="r"><code>pander(
+  filter(murders, rate &lt;= 0.71)
+  )</code></pre>
+<table style="width:94%;">
+<colgroup>
+<col width="22%" />
+<col width="8%" />
+<col width="22%" />
+<col width="18%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">state</th>
+<th align="center">abb</th>
+<th align="center">region</th>
+<th align="center">population</th>
+<th align="center">total</th>
+<th align="center">rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Hawaii</td>
+<td align="center">HI</td>
+<td align="center">West</td>
+<td align="center">1360301</td>
+<td align="center">7</td>
+<td align="center">0.5146</td>
+</tr>
+<tr class="even">
+<td align="center">Iowa</td>
+<td align="center">IA</td>
+<td align="center">North Central</td>
+<td align="center">3046355</td>
+<td align="center">21</td>
+<td align="center">0.6893</td>
+</tr>
+<tr class="odd">
+<td align="center">New Hampshire</td>
+<td align="center">NH</td>
+<td align="center">Northeast</td>
+<td align="center">1316470</td>
+<td align="center">5</td>
+<td align="center">0.3798</td>
+</tr>
+<tr class="even">
+<td align="center">North Dakota</td>
+<td align="center">ND</td>
+<td align="center">North Central</td>
+<td align="center">672591</td>
+<td align="center">4</td>
+<td align="center">0.5947</td>
+</tr>
+<tr class="odd">
+<td align="center">Vermont</td>
+<td align="center">VT</td>
+<td align="center">Northeast</td>
+<td align="center">625741</td>
+<td align="center">2</td>
+<td align="center">0.3196</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="selecting-columns-with-select" class="section level3">
 <h3>4.3.3 Selecting columns with select</h3>
 <p>Although our data table only has six columns, some data tables include hundreds. If we want to view just a few, we can use the dplyr select function. In the code below we select three columns, assign this to a new object and then filter the new object:</p>
 <pre class="r"><code>new_table &lt;- select(murders, state, region, rate)
-filter(new_table, rate &lt;= 0.71)</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["state"],"name":[1],"type":["chr"],"align":["left"]},{"label":["region"],"name":[2],"type":["fct"],"align":["left"]},{"label":["rate"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Hawaii","2":"West","3":"0.5145920"},{"1":"Iowa","2":"North Central","3":"0.6893484"},{"1":"New Hampshire","2":"Northeast","3":"0.3798036"},{"1":"North Dakota","2":"North Central","3":"0.5947151"},{"1":"Vermont","2":"Northeast","3":"0.3196211"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+pander(
+  filter(new_table, rate &lt;= 0.71)
+  )</code></pre>
+<table style="width:57%;">
+<colgroup>
+<col width="22%" />
+<col width="22%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">state</th>
+<th align="center">region</th>
+<th align="center">rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Hawaii</td>
+<td align="center">West</td>
+<td align="center">0.5146</td>
+</tr>
+<tr class="even">
+<td align="center">Iowa</td>
+<td align="center">North Central</td>
+<td align="center">0.6893</td>
+</tr>
+<tr class="odd">
+<td align="center">New Hampshire</td>
+<td align="center">Northeast</td>
+<td align="center">0.3798</td>
+</tr>
+<tr class="even">
+<td align="center">North Dakota</td>
+<td align="center">North Central</td>
+<td align="center">0.5947</td>
+</tr>
+<tr class="odd">
+<td align="center">Vermont</td>
+<td align="center">Northeast</td>
+<td align="center">0.3196</td>
+</tr>
+</tbody>
+</table>
 <p>In the call to select, the first argument murders is an object, but state, region, and rate are variable names.</p>
 </div>
 </div>
@@ -402,36 +848,246 @@ data(murders)</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>With dplyr, we can use select to show only certain columns. For example, with this code we would only show the states and population sizes:</li>
 </ol>
-<pre class="r"><code>select(murders, state, population) %&gt;% head()</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["state"],"name":[1],"type":["chr"],"align":["left"]},{"label":["population"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Alabama","2":"4779736","_rn_":"1"},{"1":"Alaska","2":"710231","_rn_":"2"},{"1":"Arizona","2":"6392017","_rn_":"3"},{"1":"Arkansas","2":"2915918","_rn_":"4"},{"1":"California","2":"37253956","_rn_":"5"},{"1":"Colorado","2":"5029196","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<pre class="r"><code>pander(
+  select(murders, state, population) %&gt;% head()
+  )</code></pre>
+<table style="width:36%;">
+<colgroup>
+<col width="18%" />
+<col width="18%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">state</th>
+<th align="center">population</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Alabama</td>
+<td align="center">4779736</td>
+</tr>
+<tr class="even">
+<td align="center">Alaska</td>
+<td align="center">710231</td>
+</tr>
+<tr class="odd">
+<td align="center">Arizona</td>
+<td align="center">6392017</td>
+</tr>
+<tr class="even">
+<td align="center">Arkansas</td>
+<td align="center">2915918</td>
+</tr>
+<tr class="odd">
+<td align="center">California</td>
+<td align="center">37253956</td>
+</tr>
+<tr class="even">
+<td align="center">Colorado</td>
+<td align="center">5029196</td>
+</tr>
+</tbody>
+</table>
 <p>Use select to show the state names and abbreviations in murders. Do not redefine murders, just show the results.</p>
-<pre class="r"><code>select(murders, state, abb) %&gt;% head()</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["state"],"name":[1],"type":["chr"],"align":["left"]},{"label":["abb"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"Alabama","2":"AL","_rn_":"1"},{"1":"Alaska","2":"AK","_rn_":"2"},{"1":"Arizona","2":"AZ","_rn_":"3"},{"1":"Arkansas","2":"AR","_rn_":"4"},{"1":"California","2":"CA","_rn_":"5"},{"1":"Colorado","2":"CO","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<pre class="r"><code>pander(
+  select(murders, state, abb) %&gt;% head()
+  )</code></pre>
+<table style="width:26%;">
+<colgroup>
+<col width="18%" />
+<col width="8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">state</th>
+<th align="center">abb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Alabama</td>
+<td align="center">AL</td>
+</tr>
+<tr class="even">
+<td align="center">Alaska</td>
+<td align="center">AK</td>
+</tr>
+<tr class="odd">
+<td align="center">Arizona</td>
+<td align="center">AZ</td>
+</tr>
+<tr class="even">
+<td align="center">Arkansas</td>
+<td align="center">AR</td>
+</tr>
+<tr class="odd">
+<td align="center">California</td>
+<td align="center">CA</td>
+</tr>
+<tr class="even">
+<td align="center">Colorado</td>
+<td align="center">CO</td>
+</tr>
+</tbody>
+</table>
 <ol start="4" style="list-style-type: decimal">
 <li>The dplyr function filter is used to choose specific rows of the data frame to keep. Unlike select which is for columns, filter is for rows. For example, you can show just the New York row like this:</li>
 </ol>
-<pre class="r"><code>filter(murders, state == &quot;New York&quot;)</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["state"],"name":[1],"type":["chr"],"align":["left"]},{"label":["abb"],"name":[2],"type":["chr"],"align":["left"]},{"label":["region"],"name":[3],"type":["fct"],"align":["left"]},{"label":["population"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["total"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["population_in_millions"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["rate"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["rank"],"name":[8],"type":["dbl"],"align":["right"]}],"data":[{"1":"New York","2":"NY","3":"Northeast","4":"19378102","5":"517","6":"19.3781","7":"2.66796","8":"29"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<pre class="r"><code>pander(
+  filter(murders, state == &quot;New York&quot;)
+  )</code></pre>
+<table>
+<caption>Table continues below</caption>
+<colgroup>
+<col width="14%" />
+<col width="8%" />
+<col width="16%" />
+<col width="17%" />
+<col width="10%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">state</th>
+<th align="center">abb</th>
+<th align="center">region</th>
+<th align="center">population</th>
+<th align="center">total</th>
+<th align="center">population_in_millions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">New York</td>
+<td align="center">NY</td>
+<td align="center">Northeast</td>
+<td align="center">19378102</td>
+<td align="center">517</td>
+<td align="center">19.38</td>
+</tr>
+</tbody>
+</table>
+<table style="width:22%;">
+<colgroup>
+<col width="11%" />
+<col width="11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">rate</th>
+<th align="center">rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">2.668</td>
+<td align="center">29</td>
+</tr>
+</tbody>
+</table>
 <p>You can use other logical vectors to filter rows.</p>
 <p>Use filter to show the top 5 states with the highest murder rates. After we add murder rate and rank, do not change the murders dataset, just show the result. Remember that you can filter based on the rank column.</p>
-<pre class="r"><code>filter(murders, rank &lt;= 5)</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["state"],"name":[1],"type":["chr"],"align":["left"]},{"label":["abb"],"name":[2],"type":["chr"],"align":["left"]},{"label":["region"],"name":[3],"type":["fct"],"align":["left"]},{"label":["population"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["total"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["population_in_millions"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["rate"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["rank"],"name":[8],"type":["dbl"],"align":["right"]}],"data":[{"1":"District of Columbia","2":"DC","3":"South","4":"601723","5":"99","6":"0.601723","7":"16.452753","8":"1"},{"1":"Louisiana","2":"LA","3":"South","4":"4533372","5":"351","6":"4.533372","7":"7.742581","8":"2"},{"1":"Maryland","2":"MD","3":"South","4":"5773552","5":"293","6":"5.773552","7":"5.074866","8":"4"},{"1":"Missouri","2":"MO","3":"North Central","4":"5988927","5":"321","6":"5.988927","7":"5.359892","8":"3"},{"1":"South Carolina","2":"SC","3":"South","4":"4625364","5":"207","6":"4.625364","7":"4.475323","8":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<pre class="r"><code>pander(
+  filter(murders, rank &lt;= 5)
+  )</code></pre>
+<table style="width:92%;">
+<caption>Table continues below</caption>
+<colgroup>
+<col width="31%" />
+<col width="8%" />
+<col width="22%" />
+<col width="18%" />
+<col width="11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">state</th>
+<th align="center">abb</th>
+<th align="center">region</th>
+<th align="center">population</th>
+<th align="center">total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">District of Columbia</td>
+<td align="center">DC</td>
+<td align="center">South</td>
+<td align="center">601723</td>
+<td align="center">99</td>
+</tr>
+<tr class="even">
+<td align="center">Louisiana</td>
+<td align="center">LA</td>
+<td align="center">South</td>
+<td align="center">4533372</td>
+<td align="center">351</td>
+</tr>
+<tr class="odd">
+<td align="center">Maryland</td>
+<td align="center">MD</td>
+<td align="center">South</td>
+<td align="center">5773552</td>
+<td align="center">293</td>
+</tr>
+<tr class="even">
+<td align="center">Missouri</td>
+<td align="center">MO</td>
+<td align="center">North Central</td>
+<td align="center">5988927</td>
+<td align="center">321</td>
+</tr>
+<tr class="odd">
+<td align="center">South Carolina</td>
+<td align="center">SC</td>
+<td align="center">South</td>
+<td align="center">4625364</td>
+<td align="center">207</td>
+</tr>
+</tbody>
+</table>
+<table style="width:57%;">
+<colgroup>
+<col width="34%" />
+<col width="11%" />
+<col width="11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">population_in_millions</th>
+<th align="center">rate</th>
+<th align="center">rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">0.6017</td>
+<td align="center">16.45</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">4.533</td>
+<td align="center">7.743</td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="center">5.774</td>
+<td align="center">5.075</td>
+<td align="center">4</td>
+</tr>
+<tr class="even">
+<td align="center">5.989</td>
+<td align="center">5.36</td>
+<td align="center">3</td>
+</tr>
+<tr class="odd">
+<td align="center">4.625</td>
+<td align="center">4.475</td>
+<td align="center">5</td>
+</tr>
+</tbody>
+</table>
 <ol start="5" style="list-style-type: decimal">
 <li>We can remove rows using the != operator. For example, to remove Florida, we would do this:</li>
 </ol>
@@ -443,12 +1099,70 @@ nrow(no_south)</code></pre>
 <ol start="6" style="list-style-type: decimal">
 <li>We can also use %in% to filter with dplyr. You can therefore see the data from New York and Texas like this:</li>
 </ol>
-<pre class="r"><code>filter(murders, state %in% c(&quot;New York&quot;, &quot;Texas&quot;))</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["state"],"name":[1],"type":["chr"],"align":["left"]},{"label":["abb"],"name":[2],"type":["chr"],"align":["left"]},{"label":["region"],"name":[3],"type":["fct"],"align":["left"]},{"label":["population"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["total"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["population_in_millions"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["rate"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["rank"],"name":[8],"type":["dbl"],"align":["right"]}],"data":[{"1":"New York","2":"NY","3":"Northeast","4":"19378102","5":"517","6":"19.37810","7":"2.66796","8":"29"},{"1":"Texas","2":"TX","3":"South","4":"25145561","5":"805","6":"25.14556","7":"3.20136","8":"16"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<pre class="r"><code>pander(
+  filter(murders, state %in% c(&quot;New York&quot;, &quot;Texas&quot;))
+  )</code></pre>
+<table>
+<caption>Table continues below</caption>
+<colgroup>
+<col width="14%" />
+<col width="8%" />
+<col width="16%" />
+<col width="17%" />
+<col width="10%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">state</th>
+<th align="center">abb</th>
+<th align="center">region</th>
+<th align="center">population</th>
+<th align="center">total</th>
+<th align="center">population_in_millions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">New York</td>
+<td align="center">NY</td>
+<td align="center">Northeast</td>
+<td align="center">19378102</td>
+<td align="center">517</td>
+<td align="center">19.38</td>
+</tr>
+<tr class="even">
+<td align="center">Texas</td>
+<td align="center">TX</td>
+<td align="center">South</td>
+<td align="center">25145561</td>
+<td align="center">805</td>
+<td align="center">25.15</td>
+</tr>
+</tbody>
+</table>
+<table style="width:22%;">
+<colgroup>
+<col width="11%" />
+<col width="11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">rate</th>
+<th align="center">rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">2.668</td>
+<td align="center">29</td>
+</tr>
+<tr class="even">
+<td align="center">3.201</td>
+<td align="center">16</td>
+</tr>
+</tbody>
+</table>
 <p>Create a new data frame called murders_nw with only the states from the Northeast and the West. How many states are in this category?</p>
 <pre class="r"><code>murders_nw &lt;- filter(murders, region %in% c(&quot;Northeast&quot;, &quot;West&quot;))
 nrow(murders_nw)</code></pre>
@@ -456,20 +1170,167 @@ nrow(murders_nw)</code></pre>
 <ol start="7" style="list-style-type: decimal">
 <li>Suppose you want to live in the Northeast or West and want the murder rate to be less than 1. We want to see the data for the states satisfying these options. Note that you can use logical operators with filter. Here is an example in which we filter to keep only small states in the Northeast region.</li>
 </ol>
-<pre class="r"><code>filter(murders, population &lt; 5000000 &amp; region == &quot;Northeast&quot;)</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["state"],"name":[1],"type":["chr"],"align":["left"]},{"label":["abb"],"name":[2],"type":["chr"],"align":["left"]},{"label":["region"],"name":[3],"type":["fct"],"align":["left"]},{"label":["population"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["total"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["population_in_millions"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["rate"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["rank"],"name":[8],"type":["dbl"],"align":["right"]}],"data":[{"1":"Connecticut","2":"CT","3":"Northeast","4":"3574097","5":"97","6":"3.574097","7":"2.7139722","8":"25"},{"1":"Maine","2":"ME","3":"Northeast","4":"1328361","5":"11","6":"1.328361","7":"0.8280881","8":"44"},{"1":"New Hampshire","2":"NH","3":"Northeast","4":"1316470","5":"5","6":"1.316470","7":"0.3798036","8":"50"},{"1":"Rhode Island","2":"RI","3":"Northeast","4":"1052567","5":"16","6":"1.052567","7":"1.5200933","8":"35"},{"1":"Vermont","2":"VT","3":"Northeast","4":"625741","5":"2","6":"0.625741","7":"0.3196211","8":"51"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<pre class="r"><code>pander(
+  filter(murders, population &lt; 5000000 &amp; region == &quot;Northeast&quot;)
+)</code></pre>
+<table>
+<caption>Table continues below</caption>
+<colgroup>
+<col width="20%" />
+<col width="7%" />
+<col width="15%" />
+<col width="16%" />
+<col width="10%" />
+<col width="31%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">state</th>
+<th align="center">abb</th>
+<th align="center">region</th>
+<th align="center">population</th>
+<th align="center">total</th>
+<th align="center">population_in_millions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Connecticut</td>
+<td align="center">CT</td>
+<td align="center">Northeast</td>
+<td align="center">3574097</td>
+<td align="center">97</td>
+<td align="center">3.574</td>
+</tr>
+<tr class="even">
+<td align="center">Maine</td>
+<td align="center">ME</td>
+<td align="center">Northeast</td>
+<td align="center">1328361</td>
+<td align="center">11</td>
+<td align="center">1.328</td>
+</tr>
+<tr class="odd">
+<td align="center">New Hampshire</td>
+<td align="center">NH</td>
+<td align="center">Northeast</td>
+<td align="center">1316470</td>
+<td align="center">5</td>
+<td align="center">1.316</td>
+</tr>
+<tr class="even">
+<td align="center">Rhode Island</td>
+<td align="center">RI</td>
+<td align="center">Northeast</td>
+<td align="center">1052567</td>
+<td align="center">16</td>
+<td align="center">1.053</td>
+</tr>
+<tr class="odd">
+<td align="center">Vermont</td>
+<td align="center">VT</td>
+<td align="center">Northeast</td>
+<td align="center">625741</td>
+<td align="center">2</td>
+<td align="center">0.6257</td>
+</tr>
+</tbody>
+</table>
+<table style="width:25%;">
+<colgroup>
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">rate</th>
+<th align="center">rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">2.714</td>
+<td align="center">25</td>
+</tr>
+<tr class="even">
+<td align="center">0.8281</td>
+<td align="center">44</td>
+</tr>
+<tr class="odd">
+<td align="center">0.3798</td>
+<td align="center">50</td>
+</tr>
+<tr class="even">
+<td align="center">1.52</td>
+<td align="center">35</td>
+</tr>
+<tr class="odd">
+<td align="center">0.3196</td>
+<td align="center">51</td>
+</tr>
+</tbody>
+</table>
 <p>Make sure murders has been defined with rate and rank and still has all states. Create a table called my_states that contains rows for states satisfying both the conditions: it is in the Northeast or West and the murder rate is less than 1. Use select to show only the state name, the rate, and the rank.</p>
 <pre class="r"><code>my_states &lt;- filter(murders, rate &lt; 1 &amp; region %in% c(&quot;Northeast&quot;, &quot;West&quot;))
-select(my_states, state, rate, rank)</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["state"],"name":[1],"type":["chr"],"align":["left"]},{"label":["rate"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["rank"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Hawaii","2":"0.5145920","3":"49"},{"1":"Idaho","2":"0.7655102","3":"46"},{"1":"Maine","2":"0.8280881","3":"44"},{"1":"New Hampshire","2":"0.3798036","3":"50"},{"1":"Oregon","2":"0.9396843","3":"42"},{"1":"Utah","2":"0.7959810","3":"45"},{"1":"Vermont","2":"0.3196211","3":"51"},{"1":"Wyoming","2":"0.8871131","3":"43"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+pander(
+  select(my_states, state, rate, rank)
+)</code></pre>
+<table style="width:47%;">
+<colgroup>
+<col width="22%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">state</th>
+<th align="center">rate</th>
+<th align="center">rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Hawaii</td>
+<td align="center">0.5146</td>
+<td align="center">49</td>
+</tr>
+<tr class="even">
+<td align="center">Idaho</td>
+<td align="center">0.7655</td>
+<td align="center">46</td>
+</tr>
+<tr class="odd">
+<td align="center">Maine</td>
+<td align="center">0.8281</td>
+<td align="center">44</td>
+</tr>
+<tr class="even">
+<td align="center">New Hampshire</td>
+<td align="center">0.3798</td>
+<td align="center">50</td>
+</tr>
+<tr class="odd">
+<td align="center">Oregon</td>
+<td align="center">0.9397</td>
+<td align="center">42</td>
+</tr>
+<tr class="even">
+<td align="center">Utah</td>
+<td align="center">0.796</td>
+<td align="center">45</td>
+</tr>
+<tr class="odd">
+<td align="center">Vermont</td>
+<td align="center">0.3196</td>
+<td align="center">51</td>
+</tr>
+<tr class="even">
+<td align="center">Wyoming</td>
+<td align="center">0.8871</td>
+<td align="center">43</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="the-pipe" class="section level2">
 <h2>4.5 The pipe: %&gt;%</h2>
@@ -477,12 +1338,50 @@ select(my_states, state, rate, rank)</code></pre>
 <p>We wrote code above to show three variables (state, region, rate) for states that have murder rates below 0.71. To do this, we defined the intermediate object new_table. In dplyr we can write code that looks more like a description of what we want to do without intermediate objects:</p>
 <pre class="r"><code># original data -&gt; selcet -&gt; filter</code></pre>
 <p>For such an operation, we can use the pipe %&gt;%. The code looks like this:</p>
-<pre class="r"><code>murders %&gt;% select(state, region, rate) %&gt;% filter(rate &lt;= 0.71)</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["state"],"name":[1],"type":["chr"],"align":["left"]},{"label":["region"],"name":[2],"type":["fct"],"align":["left"]},{"label":["rate"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Hawaii","2":"West","3":"0.5145920"},{"1":"Iowa","2":"North Central","3":"0.6893484"},{"1":"New Hampshire","2":"Northeast","3":"0.3798036"},{"1":"North Dakota","2":"North Central","3":"0.5947151"},{"1":"Vermont","2":"Northeast","3":"0.3196211"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<pre class="r"><code>pander(
+  murders %&gt;% select(state, region, rate) %&gt;% filter(rate &lt;= 0.71)
+)</code></pre>
+<table style="width:57%;">
+<colgroup>
+<col width="22%" />
+<col width="22%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">state</th>
+<th align="center">region</th>
+<th align="center">rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Hawaii</td>
+<td align="center">West</td>
+<td align="center">0.5146</td>
+</tr>
+<tr class="even">
+<td align="center">Iowa</td>
+<td align="center">North Central</td>
+<td align="center">0.6893</td>
+</tr>
+<tr class="odd">
+<td align="center">New Hampshire</td>
+<td align="center">Northeast</td>
+<td align="center">0.3798</td>
+</tr>
+<tr class="even">
+<td align="center">North Dakota</td>
+<td align="center">North Central</td>
+<td align="center">0.5947</td>
+</tr>
+<tr class="odd">
+<td align="center">Vermont</td>
+<td align="center">Northeast</td>
+<td align="center">0.3196</td>
+</tr>
+</tbody>
+</table>
 <p>This line of code is equivalent to the two lines of code above. What is going on here?</p>
 <p>In general, the pipe sends the result of the left side of the pipe to be the first argument of the function on the right side of the pipe. Here is a very simple example:</p>
 <pre class="r"><code>16 %&gt;% sqrt()</code></pre>
@@ -495,12 +1394,50 @@ select(my_states, state, rate, rank)</code></pre>
 <pre class="r"><code>16 %&gt;% sqrt() %&gt;% log(base = 2)</code></pre>
 <pre><code>## [1] 2</code></pre>
 <p>Therefore, when using the pipe with data frames and dplyr, we no longer need to specify the required first argument since the dplyr functions we have described all take the data as the first argument. In the code we wrote:</p>
-<pre class="r"><code>murders %&gt;% select(state, region, rate) %&gt;% filter(rate &lt;= 0.71)</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["state"],"name":[1],"type":["chr"],"align":["left"]},{"label":["region"],"name":[2],"type":["fct"],"align":["left"]},{"label":["rate"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Hawaii","2":"West","3":"0.5145920"},{"1":"Iowa","2":"North Central","3":"0.6893484"},{"1":"New Hampshire","2":"Northeast","3":"0.3798036"},{"1":"North Dakota","2":"North Central","3":"0.5947151"},{"1":"Vermont","2":"Northeast","3":"0.3196211"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<pre class="r"><code>pander(
+  murders %&gt;% select(state, region, rate) %&gt;% filter(rate &lt;= 0.71)
+)</code></pre>
+<table style="width:57%;">
+<colgroup>
+<col width="22%" />
+<col width="22%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">state</th>
+<th align="center">region</th>
+<th align="center">rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Hawaii</td>
+<td align="center">West</td>
+<td align="center">0.5146</td>
+</tr>
+<tr class="even">
+<td align="center">Iowa</td>
+<td align="center">North Central</td>
+<td align="center">0.6893</td>
+</tr>
+<tr class="odd">
+<td align="center">New Hampshire</td>
+<td align="center">Northeast</td>
+<td align="center">0.3798</td>
+</tr>
+<tr class="even">
+<td align="center">North Dakota</td>
+<td align="center">North Central</td>
+<td align="center">0.5947</td>
+</tr>
+<tr class="odd">
+<td align="center">Vermont</td>
+<td align="center">Northeast</td>
+<td align="center">0.3196</td>
+</tr>
+</tbody>
+</table>
 <p>murders is the first argument of the select function, and the new data frame (formerly new_table) is the first argument of the filter function.</p>
 <p>Note that the pipe works well with functions where the first argument is the input data. Functions in tidyverse packages like dplyr have this format and can be used easily with the pipe.</p>
 </div>
@@ -515,29 +1452,403 @@ select(my_states, state, rate, rank)</code></pre>
 <pre class="r"><code>my_states &lt;- filter(murders, region %in% c(&quot;Northeast&quot;, &quot;West&quot;) &amp; 
                       rate &lt; 1)
 
-select(my_states, state, rate, rank)</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["state"],"name":[1],"type":["chr"],"align":["left"]},{"label":["rate"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["rank"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Hawaii","2":"0.5145920","3":"49"},{"1":"Idaho","2":"0.7655102","3":"46"},{"1":"Maine","2":"0.8280881","3":"44"},{"1":"New Hampshire","2":"0.3798036","3":"50"},{"1":"Oregon","2":"0.9396843","3":"42"},{"1":"Utah","2":"0.7959810","3":"45"},{"1":"Vermont","2":"0.3196211","3":"51"},{"1":"Wyoming","2":"0.8871131","3":"43"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+pander(
+  select(my_states, state, rate, rank)
+)</code></pre>
+<table style="width:47%;">
+<colgroup>
+<col width="22%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">state</th>
+<th align="center">rate</th>
+<th align="center">rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Hawaii</td>
+<td align="center">0.5146</td>
+<td align="center">49</td>
+</tr>
+<tr class="even">
+<td align="center">Idaho</td>
+<td align="center">0.7655</td>
+<td align="center">46</td>
+</tr>
+<tr class="odd">
+<td align="center">Maine</td>
+<td align="center">0.8281</td>
+<td align="center">44</td>
+</tr>
+<tr class="even">
+<td align="center">New Hampshire</td>
+<td align="center">0.3798</td>
+<td align="center">50</td>
+</tr>
+<tr class="odd">
+<td align="center">Oregon</td>
+<td align="center">0.9397</td>
+<td align="center">42</td>
+</tr>
+<tr class="even">
+<td align="center">Utah</td>
+<td align="center">0.796</td>
+<td align="center">45</td>
+</tr>
+<tr class="odd">
+<td align="center">Vermont</td>
+<td align="center">0.3196</td>
+<td align="center">51</td>
+</tr>
+<tr class="even">
+<td align="center">Wyoming</td>
+<td align="center">0.8871</td>
+<td align="center">43</td>
+</tr>
+</tbody>
+</table>
 <p>The pipe %&gt;% permits us to perform both operations sequentially without having to define an intermediate variable my_states. We therefore could have mutated and selected in the same line like this:</p>
-<pre class="r"><code>mutate(murders, rate =  total / population * 100000, 
+<pre class="r"><code>pander(
+  mutate(murders, rate =  total / population * 100000, 
        rank = rank(-rate)) %&gt;%
-  select(state, rate, rank)</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["state"],"name":[1],"type":["chr"],"align":["left"]},{"label":["rate"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["rank"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Alabama","2":"2.8244238","3":"23"},{"1":"Alaska","2":"2.6751860","3":"27"},{"1":"Arizona","2":"3.6295273","3":"10"},{"1":"Arkansas","2":"3.1893901","3":"17"},{"1":"California","2":"3.3741383","3":"14"},{"1":"Colorado","2":"1.2924531","3":"38"},{"1":"Connecticut","2":"2.7139722","3":"25"},{"1":"Delaware","2":"4.2319369","3":"6"},{"1":"District of Columbia","2":"16.4527532","3":"1"},{"1":"Florida","2":"3.3980688","3":"13"},{"1":"Georgia","2":"3.7903226","3":"9"},{"1":"Hawaii","2":"0.5145920","3":"49"},{"1":"Idaho","2":"0.7655102","3":"46"},{"1":"Illinois","2":"2.8369608","3":"22"},{"1":"Indiana","2":"2.1900730","3":"31"},{"1":"Iowa","2":"0.6893484","3":"47"},{"1":"Kansas","2":"2.2081106","3":"30"},{"1":"Kentucky","2":"2.6732010","3":"28"},{"1":"Louisiana","2":"7.7425810","3":"2"},{"1":"Maine","2":"0.8280881","3":"44"},{"1":"Maryland","2":"5.0748655","3":"4"},{"1":"Massachusetts","2":"1.8021791","3":"32"},{"1":"Michigan","2":"4.1786225","3":"7"},{"1":"Minnesota","2":"0.9992600","3":"40"},{"1":"Mississippi","2":"4.0440846","3":"8"},{"1":"Missouri","2":"5.3598917","3":"3"},{"1":"Montana","2":"1.2128379","3":"39"},{"1":"Nebraska","2":"1.7521372","3":"33"},{"1":"Nevada","2":"3.1104763","3":"19"},{"1":"New Hampshire","2":"0.3798036","3":"50"},{"1":"New Jersey","2":"2.7980319","3":"24"},{"1":"New Mexico","2":"3.2537239","3":"15"},{"1":"New York","2":"2.6679599","3":"29"},{"1":"North Carolina","2":"2.9993237","3":"20"},{"1":"North Dakota","2":"0.5947151","3":"48"},{"1":"Ohio","2":"2.6871225","3":"26"},{"1":"Oklahoma","2":"2.9589340","3":"21"},{"1":"Oregon","2":"0.9396843","3":"42"},{"1":"Pennsylvania","2":"3.5977513","3":"11"},{"1":"Rhode Island","2":"1.5200933","3":"35"},{"1":"South Carolina","2":"4.4753235","3":"5"},{"1":"South Dakota","2":"0.9825837","3":"41"},{"1":"Tennessee","2":"3.4509357","3":"12"},{"1":"Texas","2":"3.2013603","3":"16"},{"1":"Utah","2":"0.7959810","3":"45"},{"1":"Vermont","2":"0.3196211","3":"51"},{"1":"Virginia","2":"3.1246001","3":"18"},{"1":"Washington","2":"1.3829942","3":"37"},{"1":"West Virginia","2":"1.4571013","3":"36"},{"1":"Wisconsin","2":"1.7056487","3":"34"},{"1":"Wyoming","2":"0.8871131","3":"43"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+  select(state, rate, rank)
+)</code></pre>
+<table style="width:57%;">
+<colgroup>
+<col width="31%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">state</th>
+<th align="center">rate</th>
+<th align="center">rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Alabama</td>
+<td align="center">2.824</td>
+<td align="center">23</td>
+</tr>
+<tr class="even">
+<td align="center">Alaska</td>
+<td align="center">2.675</td>
+<td align="center">27</td>
+</tr>
+<tr class="odd">
+<td align="center">Arizona</td>
+<td align="center">3.63</td>
+<td align="center">10</td>
+</tr>
+<tr class="even">
+<td align="center">Arkansas</td>
+<td align="center">3.189</td>
+<td align="center">17</td>
+</tr>
+<tr class="odd">
+<td align="center">California</td>
+<td align="center">3.374</td>
+<td align="center">14</td>
+</tr>
+<tr class="even">
+<td align="center">Colorado</td>
+<td align="center">1.292</td>
+<td align="center">38</td>
+</tr>
+<tr class="odd">
+<td align="center">Connecticut</td>
+<td align="center">2.714</td>
+<td align="center">25</td>
+</tr>
+<tr class="even">
+<td align="center">Delaware</td>
+<td align="center">4.232</td>
+<td align="center">6</td>
+</tr>
+<tr class="odd">
+<td align="center">District of Columbia</td>
+<td align="center">16.45</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">Florida</td>
+<td align="center">3.398</td>
+<td align="center">13</td>
+</tr>
+<tr class="odd">
+<td align="center">Georgia</td>
+<td align="center">3.79</td>
+<td align="center">9</td>
+</tr>
+<tr class="even">
+<td align="center">Hawaii</td>
+<td align="center">0.5146</td>
+<td align="center">49</td>
+</tr>
+<tr class="odd">
+<td align="center">Idaho</td>
+<td align="center">0.7655</td>
+<td align="center">46</td>
+</tr>
+<tr class="even">
+<td align="center">Illinois</td>
+<td align="center">2.837</td>
+<td align="center">22</td>
+</tr>
+<tr class="odd">
+<td align="center">Indiana</td>
+<td align="center">2.19</td>
+<td align="center">31</td>
+</tr>
+<tr class="even">
+<td align="center">Iowa</td>
+<td align="center">0.6893</td>
+<td align="center">47</td>
+</tr>
+<tr class="odd">
+<td align="center">Kansas</td>
+<td align="center">2.208</td>
+<td align="center">30</td>
+</tr>
+<tr class="even">
+<td align="center">Kentucky</td>
+<td align="center">2.673</td>
+<td align="center">28</td>
+</tr>
+<tr class="odd">
+<td align="center">Louisiana</td>
+<td align="center">7.743</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">Maine</td>
+<td align="center">0.8281</td>
+<td align="center">44</td>
+</tr>
+<tr class="odd">
+<td align="center">Maryland</td>
+<td align="center">5.075</td>
+<td align="center">4</td>
+</tr>
+<tr class="even">
+<td align="center">Massachusetts</td>
+<td align="center">1.802</td>
+<td align="center">32</td>
+</tr>
+<tr class="odd">
+<td align="center">Michigan</td>
+<td align="center">4.179</td>
+<td align="center">7</td>
+</tr>
+<tr class="even">
+<td align="center">Minnesota</td>
+<td align="center">0.9993</td>
+<td align="center">40</td>
+</tr>
+<tr class="odd">
+<td align="center">Mississippi</td>
+<td align="center">4.044</td>
+<td align="center">8</td>
+</tr>
+<tr class="even">
+<td align="center">Missouri</td>
+<td align="center">5.36</td>
+<td align="center">3</td>
+</tr>
+<tr class="odd">
+<td align="center">Montana</td>
+<td align="center">1.213</td>
+<td align="center">39</td>
+</tr>
+<tr class="even">
+<td align="center">Nebraska</td>
+<td align="center">1.752</td>
+<td align="center">33</td>
+</tr>
+<tr class="odd">
+<td align="center">Nevada</td>
+<td align="center">3.11</td>
+<td align="center">19</td>
+</tr>
+<tr class="even">
+<td align="center">New Hampshire</td>
+<td align="center">0.3798</td>
+<td align="center">50</td>
+</tr>
+<tr class="odd">
+<td align="center">New Jersey</td>
+<td align="center">2.798</td>
+<td align="center">24</td>
+</tr>
+<tr class="even">
+<td align="center">New Mexico</td>
+<td align="center">3.254</td>
+<td align="center">15</td>
+</tr>
+<tr class="odd">
+<td align="center">New York</td>
+<td align="center">2.668</td>
+<td align="center">29</td>
+</tr>
+<tr class="even">
+<td align="center">North Carolina</td>
+<td align="center">2.999</td>
+<td align="center">20</td>
+</tr>
+<tr class="odd">
+<td align="center">North Dakota</td>
+<td align="center">0.5947</td>
+<td align="center">48</td>
+</tr>
+<tr class="even">
+<td align="center">Ohio</td>
+<td align="center">2.687</td>
+<td align="center">26</td>
+</tr>
+<tr class="odd">
+<td align="center">Oklahoma</td>
+<td align="center">2.959</td>
+<td align="center">21</td>
+</tr>
+<tr class="even">
+<td align="center">Oregon</td>
+<td align="center">0.9397</td>
+<td align="center">42</td>
+</tr>
+<tr class="odd">
+<td align="center">Pennsylvania</td>
+<td align="center">3.598</td>
+<td align="center">11</td>
+</tr>
+<tr class="even">
+<td align="center">Rhode Island</td>
+<td align="center">1.52</td>
+<td align="center">35</td>
+</tr>
+<tr class="odd">
+<td align="center">South Carolina</td>
+<td align="center">4.475</td>
+<td align="center">5</td>
+</tr>
+<tr class="even">
+<td align="center">South Dakota</td>
+<td align="center">0.9826</td>
+<td align="center">41</td>
+</tr>
+<tr class="odd">
+<td align="center">Tennessee</td>
+<td align="center">3.451</td>
+<td align="center">12</td>
+</tr>
+<tr class="even">
+<td align="center">Texas</td>
+<td align="center">3.201</td>
+<td align="center">16</td>
+</tr>
+<tr class="odd">
+<td align="center">Utah</td>
+<td align="center">0.796</td>
+<td align="center">45</td>
+</tr>
+<tr class="even">
+<td align="center">Vermont</td>
+<td align="center">0.3196</td>
+<td align="center">51</td>
+</tr>
+<tr class="odd">
+<td align="center">Virginia</td>
+<td align="center">3.125</td>
+<td align="center">18</td>
+</tr>
+<tr class="even">
+<td align="center">Washington</td>
+<td align="center">1.383</td>
+<td align="center">37</td>
+</tr>
+<tr class="odd">
+<td align="center">West Virginia</td>
+<td align="center">1.457</td>
+<td align="center">36</td>
+</tr>
+<tr class="even">
+<td align="center">Wisconsin</td>
+<td align="center">1.706</td>
+<td align="center">34</td>
+</tr>
+<tr class="odd">
+<td align="center">Wyoming</td>
+<td align="center">0.8871</td>
+<td align="center">43</td>
+</tr>
+</tbody>
+</table>
 <p>Notice that select no longer has a data frame as the first argument. The first argument is assumed to be the result of the operation conducted right before the %&gt;%.</p>
 <p>Repeat the previous exercise, but now instead of creating a new object, show the result and only include the state, rate, and rank columns. Use a pipe %&gt;% to do this in just one line.</p>
-<pre class="r"><code>filter(murders, rate &lt; 1 &amp; region %in% c(&quot;Northeast&quot;, &quot;West&quot;)) %&gt;% select(state, rate, rank)</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["state"],"name":[1],"type":["chr"],"align":["left"]},{"label":["rate"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["rank"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Hawaii","2":"0.5145920","3":"49"},{"1":"Idaho","2":"0.7655102","3":"46"},{"1":"Maine","2":"0.8280881","3":"44"},{"1":"New Hampshire","2":"0.3798036","3":"50"},{"1":"Oregon","2":"0.9396843","3":"42"},{"1":"Utah","2":"0.7959810","3":"45"},{"1":"Vermont","2":"0.3196211","3":"51"},{"1":"Wyoming","2":"0.8871131","3":"43"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<pre class="r"><code>pander(
+  filter(murders, rate &lt; 1 &amp; region %in% c(&quot;Northeast&quot;, &quot;West&quot;)) %&gt;% select(state, rate, rank)
+)</code></pre>
+<table style="width:47%;">
+<colgroup>
+<col width="22%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">state</th>
+<th align="center">rate</th>
+<th align="center">rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Hawaii</td>
+<td align="center">0.5146</td>
+<td align="center">49</td>
+</tr>
+<tr class="even">
+<td align="center">Idaho</td>
+<td align="center">0.7655</td>
+<td align="center">46</td>
+</tr>
+<tr class="odd">
+<td align="center">Maine</td>
+<td align="center">0.8281</td>
+<td align="center">44</td>
+</tr>
+<tr class="even">
+<td align="center">New Hampshire</td>
+<td align="center">0.3798</td>
+<td align="center">50</td>
+</tr>
+<tr class="odd">
+<td align="center">Oregon</td>
+<td align="center">0.9397</td>
+<td align="center">42</td>
+</tr>
+<tr class="even">
+<td align="center">Utah</td>
+<td align="center">0.796</td>
+<td align="center">45</td>
+</tr>
+<tr class="odd">
+<td align="center">Vermont</td>
+<td align="center">0.3196</td>
+<td align="center">51</td>
+</tr>
+<tr class="even">
+<td align="center">Wyoming</td>
+<td align="center">0.8871</td>
+<td align="center">43</td>
+</tr>
+</tbody>
+</table>
 <ol start="2" style="list-style-type: decimal">
 <li>Reset murders to the original table by using data(murders). Use a pipe to create a new data frame called my_states that considers only states in the Northeast or West which have a murder rate lower than 1, and contains only the state, rate and rank columns. The pipe should also have four components separated by three %&gt;%. The code should look something like this:</li>
 </ol>
@@ -546,12 +1857,63 @@ my_states &lt;- murders %&gt;%
   mutate(rate = total / population * 100000, rank = rank(-rate)) %&gt;%
   filter(region %in% c(&quot;Northeast&quot;, &quot;West&quot;) &amp; rate &lt; 1) %&gt;%
   select(state, rate, rank)
-my_states</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["state"],"name":[1],"type":["chr"],"align":["left"]},{"label":["rate"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["rank"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Hawaii","2":"0.5145920","3":"49"},{"1":"Idaho","2":"0.7655102","3":"46"},{"1":"Maine","2":"0.8280881","3":"44"},{"1":"New Hampshire","2":"0.3798036","3":"50"},{"1":"Oregon","2":"0.9396843","3":"42"},{"1":"Utah","2":"0.7959810","3":"45"},{"1":"Vermont","2":"0.3196211","3":"51"},{"1":"Wyoming","2":"0.8871131","3":"43"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+pander(my_states)</code></pre>
+<table style="width:47%;">
+<colgroup>
+<col width="22%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">state</th>
+<th align="center">rate</th>
+<th align="center">rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Hawaii</td>
+<td align="center">0.5146</td>
+<td align="center">49</td>
+</tr>
+<tr class="even">
+<td align="center">Idaho</td>
+<td align="center">0.7655</td>
+<td align="center">46</td>
+</tr>
+<tr class="odd">
+<td align="center">Maine</td>
+<td align="center">0.8281</td>
+<td align="center">44</td>
+</tr>
+<tr class="even">
+<td align="center">New Hampshire</td>
+<td align="center">0.3798</td>
+<td align="center">50</td>
+</tr>
+<tr class="odd">
+<td align="center">Oregon</td>
+<td align="center">0.9397</td>
+<td align="center">42</td>
+</tr>
+<tr class="even">
+<td align="center">Utah</td>
+<td align="center">0.796</td>
+<td align="center">45</td>
+</tr>
+<tr class="odd">
+<td align="center">Vermont</td>
+<td align="center">0.3196</td>
+<td align="center">51</td>
+</tr>
+<tr class="even">
+<td align="center">Wyoming</td>
+<td align="center">0.8871</td>
+<td align="center">43</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
