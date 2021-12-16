@@ -1,0 +1,74 @@
+---
+title: "Effects of EGFR status and age on the primary location of lung cancer in nonsmokers"
+output: html_notebook
+---
+BSMS222 Biostatistics, 2020250117 Giyeon Park
+
+
+
+## 1. Introduction
+
+EGFR mutation is significantly associated with adenocarcinoma(ADC). EGFR overexpression leads to loss of cell cycle control which can cause ADC. According to the resource paper, ‘Proteogenomics of Non-smoking Lung Cancer in East Asia Delineates Molecular Signatures of Pathogenesis and Progression,’ EGFR mutation is the main characteristic of lung adenocarcinoma(LUAD) in East Asia. This paper gives data about early-stage lung cancer patients in Taiwan(TW) such as age, gender, histology type, EGFR status, and primary tumor location.
+
+This portfolio focuses on EGFR status, age, and primary cancer location of non-smoking LUAD patients in TW. The human’s lung is divided into five lobes according to their positions; LLL(Left lower lobe), LML(Left upper lobe), RLL(Right lower lobe), RML(Right middle lobe), and RUL(Right upper lobe). This portfolio uses data visualization to determine whether the EGFR status and the age of patients are associated with cancer in which area of the lung.
+
+
+
+## 2. Data visualizing
+
+```{r}
+library(dplyr)
+library(tidyverse)
+library(readxl)
+library(ggplot2)
+dataS1A = read_excel("1-s2.0-S0092867420307431-mmc1.xlsx", sheet = 2)
+```
+
+First, Let's find the correlation between primary tumor location and EGFR status by point plots. For a clear understanding of the distribution of primary tumor location in each EGFR status, bar plots are combined through ```facet_grid```.
+
+```{r}
+dataS1A %>%
+  filter(`Histology Type` == "ADC" & `Smoking Status` == "Nonsmoke") %>%
+  group_by(`Primary Tumor Location`, EGFR_Status) %>%
+  count() %>%
+  ggplot(aes(`Primary Tumor Location`, n, fill = EGFR_Status)) +
+  geom_bar(stat='identity', alpha = 0.6, show.legend = FALSE) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 10)) +
+  facet_grid(.~EGFR_Status) +
+  xlab("Primary Tumor Location") +
+  ylab("Number of cases") +
+  ggtitle("Figure 1. Distribution of primary tumor location by EGFR status")
+```
+
+Now, Let's visualize the distribution of primary tumor location by the age of patients. To determine the overall tendency of age at each cancer location, a box plot is used and the average values are also displayed.
+```{r}
+dataS1A %>%
+  filter(`Histology Type` == "ADC" & `Smoking Status` == "Nonsmoke") %>%
+  ggplot(aes(Age, `Primary Tumor Location`)) +
+  geom_boxplot() +
+  stat_summary(fun = mean, geom = "point", shape = 22, size = 3, fill = "grey") +
+  geom_point(aes(color = EGFR_Status), alpha = 0.4, size = 1.5) +
+  theme(legend.position = "bottom", legend.background = element_rect(color = "grey")) +
+  scale_color_discrete(name = "EGFR status") +
+  guides(color = guide_legend(title.position = "top")) +
+  ggtitle("Figure 2. Distribution of primary tumor location by age")
+```
+
+
+
+## 3. Discussion
+
+According to the first figure, we can find that EGFR exon19 deletion can cause LUAD more in the right lung lobes than left, while L858R mutation cause LUAD more in the left lung lobes. Although there is not clear correlation in right three lobes, exon19 deletion can cause more LUADs in the upper lobe than lower lobe in left lung. Meanwhile, L858R mutation showed a significant difference in frequency in the right lung lobes.
+
+While EGFR status did not show a significant correlation with the primary lung cancer location, it can be seen that the patient's age has some influence on the primary cancer location determination. In the second figure, the center line and average point of age tend to rise as the primary cancer position goes upward of the lung. However, it is difficult to say that this correlation is significant because the interquartile ranges of boxes are broad due to the small number of samples.
+
+
+## 4. Reference
+
+Yi-Ju Chen, Theodoros I. Roumeliotis, Ya-Hsuan Chang, Ching-Tai Chen, Chia-Li Han, Miao-Hsia Lin, Huei-Wen Chen, Gee-Chen Chang, Yih-Leong Chang, Chen-Tu Wu, Mong-Wei Lin, Min-Shu Hsieh, Yu-Tai Wang, Yet-Ran Chen, Inge Jonassen, Fatemeh Zamanzad Ghavidel, Ze-Shiang Lin, Kuen-Tyng Lin, Ching-Wen Chen, Pei-Yuan Sheu, Chen-Ting Hung, Ke-Chieh Huang, Hao-Chin Yang, Pei-Yi Lin, Ta-Chi Yen, Yi-Wei Lin, Jen-Hung Wang, Lovely Raghav, Chien-Yu Lin, Yan-Si Chen, Pei-Shan Wu, Chi-Ting Lai, Shao-Hsing Weng, Kang-Yi Su, Wei-Hung Chang, Pang-Yan Tsai, Ana I. Robles, Henry Rodriguez, Yi-Jing Hsiao, Wen-Hsin Chang, Ting-Yi Sung, Jin-Shing Chen, Sung-Liang Yu, Jyoti S. Choudhary, Hsuan-Yu Chen, Pan-Chyr Yang, Yu-Ju Chen, Proteogenomics of Non-smoking Lung Cancer in East Asia Delineates Molecular Signatures of Pathogenesis and Progression, Cell, Volume 182, Issue 1, 2020, Pages 226-244.e17
+
+
+
+
+
+
